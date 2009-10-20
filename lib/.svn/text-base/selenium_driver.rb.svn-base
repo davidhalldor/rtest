@@ -1,0 +1,23 @@
+# Author: Davíð Halldór Lúðvíksson
+# Changed: 10.07.09
+# Copyright: Siminn hf.
+
+require 'rubygems'
+gem "rspec", "=1.2.6"
+gem "selenium-client", ">=1.2.16"
+require "selenium/client"
+require "selenium/rspec/spec_helper"
+require "lib/fastar"
+
+# Klasi sem smíðar Selenium-driver
+class SeleniumDriver
+  def create_selenium_driver
+    driver = Selenium::Client::Driver.new \
+                        :host => HOST,
+                        :port => 4444,
+                        :browser => BROWSER,
+                        :url => "http://#{LOGIN}#{SITE}",
+                        :timeout_in_second => 60
+    return driver
+  end
+end

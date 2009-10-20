@@ -1,0 +1,13 @@
+This project runs a Selenium RC server for running commands on a Webserver
+
+To run the whole acceptance rspec test with xml reports
+Usage: rake ci:setup:testunit acceptance
+
+To run the accepance test without xml reports
+Usage: rake acceptance for running Accepance test
+
+To run Rdoc
+Usage: rake rdoc
+
+To list the rake commands
+Usage: rake -R
