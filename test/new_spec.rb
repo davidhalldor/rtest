@@ -1,4 +1,4 @@
-# Author: Davíð Halldór Lúðvíksson  
+# Author: Davíð Halldór Lúðvíksson - * - 
 
 require 'rubygems'
 gem "rspec", "=1.2.8"
