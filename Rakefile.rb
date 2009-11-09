@@ -41,11 +41,12 @@ end
 desc 'Run all specs tests for web application'
 Spec::Rake::SpecTask.new('spec') do |task|
   task.fail_on_error = false
-  task.spec_files = FileList['test/breyta_internet_askrift_spec.rb', 'test/uppfletting_pantana_spec.rb',
-          'test/stilla_tilkynningar_spec.rb']
-  task.spec_opts << '--backtrace' <<
-          '--format' << 'progress' <<
-          '--format' << 'failing_examples:failed'
+  task.spec_files = FileList['test/*_spec.rb']
+  task.spec_opts << '--color'
+  task.spec_opts << "--require 'rubygems,selenium/rspec/reporting/selenium_test_report_formatter'"
+  task.spec_opts << "--format=Selenium::RSpec::SeleniumTestReportFormatter:./tmp/acceptance_tests_report.html"
+  task.spec_opts << "--format=progress"
+  task.verbose = true
 end
 
 desc 'Run all failing examples'
