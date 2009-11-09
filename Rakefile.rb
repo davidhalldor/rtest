@@ -2,6 +2,8 @@
 
 require 'rubygems'
 gem 'ci_reporter'
+gem "rspec", "=1.2.8"
+gem "selenium-client", "=1.2.17"
 require 'ci/reporter/rake/rspec'
 require 'rake/rdoctask'
 require 'rake/testtask'
