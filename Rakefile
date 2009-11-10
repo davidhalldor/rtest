@@ -15,7 +15,6 @@ require 'selenium/rake/tasks'
 require 'spec/rake/spectask'
 
 GEM = "rtest"
-VERSION = "0.0.3"
 AUTHOR = "Davíð Halldór Lúðvíksson"
 EMAIL = "davidhalldor@gmail.com"
 HOMEPAGE = "http://github.com/davidhalldor/rtest"
@@ -27,7 +26,7 @@ SUMMARY = "A gem that provides Ruby Selenium test skeleton project"
 
 desc 'Create rdoc'
 Rake::RDocTask.new('rdoc') do |rdoc|
-  rdoc.title = 'TestTvSmartLykilord'
+  rdoc.title = GEM
   rdoc.main  = 'README'
   rdoc.options << '-c utf-8'
   rdoc.rdoc_files.include 'test/*.rb', 'README', 'LICENSE'
@@ -53,7 +52,7 @@ end
 desc 'Run all specs tests for web application'
 Spec::Rake::SpecTask.new('spec') do |task|
   task.fail_on_error = false
-  task.spec_files = FileList['spec/*_spec.rb']
+  task.spec_files = FileList['test/*_spec.rb']
   task.spec_opts << '--color'
   task.spec_opts << "--require 'rubygems,selenium/rspec/reporting/selenium_test_report_formatter'"
   task.spec_opts << "--format=Selenium::RSpec::SeleniumTestReportFormatter:./tmp/acceptance_tests_report.html"
@@ -85,9 +84,11 @@ task 'clobber' do
   rm_f 'failed'
 end
 
+# Gemspec specific tasks
+
 spec = Gem::Specification.new do |s|
   s.name = GEM
-  s.version = VERSION
+  s.version = "0.0.3"
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
@@ -95,9 +96,8 @@ spec = Gem::Specification.new do |s|
 
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
-  s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
+  s.extra_rdoc_files = ["README", "LICENSE"]
 
-  # Uncomment this to add a dependency
   s.add_dependency "ci_reporter"
   s.add_dependency "rspec", "=1.2.8"
   s.add_dependency "selenium-client", "=1.2.17"
@@ -105,7 +105,7 @@ spec = Gem::Specification.new do |s|
 
   s.require_path = 'lib'
   s.autorequire = GEM
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,test,vendor}/**/*")
+  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,test,vendor}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|

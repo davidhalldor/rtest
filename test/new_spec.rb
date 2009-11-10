@@ -25,6 +25,6 @@ describe "New spec" do
     @selenium_driver.close_current_browser_session
   end
   
-  it "should put new test spec here" do     
+  it "should put new test spec here" do
   end
 end
