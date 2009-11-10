@@ -14,13 +14,14 @@ describe "New spec" do
   before(:all) do
     driver = SeleniumDriver.new
     @selenium_driver = driver.create_selenium_driver
-  end
-
-  before(:each) do
     @selenium_driver.start_new_browser_session
   end
 
-  append_after(:each) do
+  before(:each) do
+    @selenium_driver.open "/"
+  end
+
+  after(:all) do
     @selenium_driver.close_current_browser_session
   end
   

@@ -24,17 +24,16 @@ end
 
 desc 'Start the Selenium server'
 Selenium::Rake::RemoteControlStartTask.new('start') do |rc|
-  if File.directory?("selenium")
-    rm_rf 'selenium'
+  if not File.directory?("selenium")
+    mkdir 'selenium'
   end
-  mkdir 'selenium'
   rc.port = 4444
   rc.timeout_in_seconds = 3 * 60
   rc.background = true
   rc.wait_until_up_and_running = true
   rc.jar_file = "vendor/selenium-server.jar"
   rc.additional_args << "-singleWindow"
-  rc.log_to = "Selenium/server.log"
+  rc.log_to = "selenium/server.log"
   if ENV['FIREFOX_PROFILE']
     rc.additional_args << "-firefoxProfileTemplate #{ENV['FIREFOX_PROFILE']}"
   end
@@ -71,7 +70,7 @@ end
 desc 'Clean temporary directories and files'
 task 'clobber' do
   rm_rf 'tmp'
-  rm_rf 'Selenium'
+  rm_rf 'selenium'
   rm_f 'failed'
 end
 
