@@ -1,0 +1,3 @@
+== rtest
+
+A gem that provides Ruby Selenium test skeleton project
