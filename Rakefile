@@ -89,6 +89,8 @@ end
 spec = Gem::Specification.new do |s|
   s.name = GEM
   s.version = "0.1.0"
+  s.version = VERSION
+
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
@@ -98,6 +100,9 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = true
   s.extra_rdoc_files = ["README", "LICENSE"]
 
+  s.bindir = "bin"
+  s.executables = "rtest"
+
   s.add_dependency "rake"
   s.add_dependency "ci_reporter"
   s.add_dependency "rspec", "=1.2.8"
@@ -106,7 +111,7 @@ spec = Gem::Specification.new do |s|
 
   s.require_path = 'lib'
   s.autorequire = GEM
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,test,vendor}/**/*")
+  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,test,vendor,bin}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|

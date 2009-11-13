@@ -1,0 +1,39 @@
+The MIT License
+
+Copyright (c) 2009 Davíð Halldór Lúðvíksson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+#############################################################################
+
+A gem that provides Ruby Selenium test skeleton project
+
+This project runs a Selenium RC server for running commands on a Webserver
+
+To run the whole acceptance rspec test with xml reports
+Usage: rake ci:setup:testunit acceptance
+
+To run the accepance test without xml reports
+Usage: rake acceptance for running Accepance test
+
+To run Rdoc
+Usage: rake rdoc
+
+To list the rake commands
+Usage: rake -R
