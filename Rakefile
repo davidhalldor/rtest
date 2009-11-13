@@ -88,7 +88,7 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name = GEM
-  s.version = "0.0.3"
+  s.version = "0.1.0"
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
@@ -98,6 +98,7 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = true
   s.extra_rdoc_files = ["README", "LICENSE"]
 
+  s.add_dependency "rake"
   s.add_dependency "ci_reporter"
   s.add_dependency "rspec", "=1.2.8"
   s.add_dependency "selenium-client", "=1.2.17"
@@ -124,7 +125,7 @@ task :make_spec do
   end
 end
 
-task :default => :spec
+task :default => :acceptance
 
 desc 'Run the acceptance test'
 task :acceptance => [:start, :spec, :stop]
