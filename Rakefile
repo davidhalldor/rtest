@@ -14,6 +14,7 @@ require 'rake/testtask'
 require 'selenium/rake/tasks'
 require 'spec/rake/spectask'
 
+VERSION = "0.1.1"
 GEM = "rtest"
 AUTHOR = "Davíð Halldór Lúðvíksson"
 EMAIL = "davidhalldor@gmail.com"
@@ -88,7 +89,6 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name = GEM
-  s.version = "0.1.0"
   s.version = VERSION
 
   s.author = AUTHOR
