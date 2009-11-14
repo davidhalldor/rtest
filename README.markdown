@@ -26,7 +26,7 @@ A gem that provides Ruby Selenium test skeleton project
 This project runs a Selenium RC server for running commands on a Webserver
 
 Install: sudo install rtest
-Setup: gem unpack rtest 
+Setup: gem unpack rtest
 
 To run the whole acceptance rspec test with xml reports
 Usage: rake ci:setup:testunit acceptance
