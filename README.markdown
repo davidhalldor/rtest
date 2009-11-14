@@ -22,8 +22,8 @@ THE SOFTWARE.
 
 #############################################################################
 
-A gem that provides Ruby Selenium test skeleton project
-This project runs a Selenium RC server for running commands on a Webserver
+A gem that provides Ruby Selenium test skeleton project. This project runs a
+Selenium RC server for running commands on a Webserver
 
 Install: sudo install rtest
 Setup: gem unpack rtest
